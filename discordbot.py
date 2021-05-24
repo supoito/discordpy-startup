@@ -3,7 +3,7 @@ import os
 import traceback
 import subprocess
 
-cmd = 'dir .'
+cmd = 'discordbot.py'
 returncode = subprocess.Popen(cmd, shell=True)
 import gspread
 import json
