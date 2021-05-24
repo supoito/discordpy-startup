@@ -19,9 +19,3 @@ async def ping(ctx):
 
 
 bot.run(token)
-@bot.command()
-async def nyan(ctx):
-    await ctx.send('nyan')
-
-
-bot.run(token)
