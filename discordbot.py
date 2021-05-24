@@ -2,23 +2,6 @@ from discord.ext import commands
 import os
 import traceback
 
-bot = commands.Bot(command_prefix='/')
-token = os.environ['DISCORD_BOT_TOKEN']
-
-
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
-
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong/n pong')
-
-
-bot.run(token)
 import gspread
 import json
 
@@ -54,3 +37,22 @@ gacha1_name = worksheet.acell('B6').value
 gacha1_expiry = dt.strptime(worksheet.acell('B7').value, '%Y-%m-%d %H:%M:%S')
 gacha2_name = worksheet.acell('D6').value
 gacha2_expiry = dt.strptime(worksheet.acell('D7').value, '%Y-%m-%d %H:%M:%S')
+
+
+bot = commands.Bot(command_prefix='/')
+token = os.environ['DISCORD_BOT_TOKEN']
+
+
+@bot.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
+
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('event1_name')
+
+
+bot.run(token)
