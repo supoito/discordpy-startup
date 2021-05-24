@@ -14,8 +14,15 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def kome(ctx):
-    await ctx.send('食いてえー')
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+bot.run(token)
+
+@bot.command()
+async def nyan(ctx):
+    await ctx.send('ごろ')
 
 
 bot.run(token)
