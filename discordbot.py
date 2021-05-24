@@ -17,8 +17,19 @@ gc = gspread.authorize(credentials)
 #共有設定したスプレッドシートキーを変数[SPREADSHEET_KEY]に格納する。
 SPREADSHEET_KEY = '1p5NK1hgzI17CtnI8-CQqC7GzRMhwWgT3zc41S_N3zpw'
 
+worksheet = workbook.sheet1
+
 #共有設定したスプレッドシートのシート1を開く
 worksheet = gc.open_by_key(SPREADSHEET_KEY).sheet1
 
-#A1セルの値を受け取る
-import_value = int(worksheet.acell('A1').value)
+event1_name = worksheet.acell('B2').value
+event1_date = dt.strptime(worksheet.acell('B3').value, '%Y-%m-%d %H:%M:%S')
+event1_medal = dt.strptime(worksheet.acell('B4').value, '%Y-%m-%d %H:%M:%S')
+event2_name = worksheet.acell('D2').value
+event2_date = dt.strptime(worksheet.acell('D3').value, '%Y-%m-%d %H:%M:%S')
+event2_medal = dt.strptime(worksheet.acell('D4').value, '%Y-%m-%d %H:%M:%S')
+# ガチャメダル引き換え期限
+gacha1_name = worksheet.acell('B6').value
+gacha1_expiry = dt.strptime(worksheet.acell('B7').value, '%Y-%m-%d %H:%M:%S')
+gacha2_name = worksheet.acell('D6').value
+gacha2_expiry = dt.strptime(worksheet.acell('D7').value, '%Y-%m-%d %H:%M:%S')
