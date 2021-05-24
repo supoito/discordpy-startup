@@ -14,7 +14,7 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def 米(ctx):
+async def kome(ctx):
     await ctx.send('食いてえー')
 
 
