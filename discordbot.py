@@ -21,7 +21,7 @@ async def ping(ctx):
 bot.run(token)
 
 @bot.command()
-async def nyan(ctx):
+async def nyan (ctx):
     await ctx.send('ごろ')
 
 
