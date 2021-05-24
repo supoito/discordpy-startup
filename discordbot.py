@@ -1,7 +1,10 @@
 from discord.ext import commands
 import os
 import traceback
+import subprocess
 
+cmd = 'dir .'
+returncode = subprocess.Popen(cmd, shell=True)
 import gspread
 import json
 
